@@ -1,0 +1,21 @@
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Gradle
+.gradle/
+build/
+gradle-app.setting
+gradlew
+gradlew.bat
+local.properties
+
+# MacOS
+.DS_Store
+
+# Другие
+*.class
+*.log
+*.pyc
+*.swp
