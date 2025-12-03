@@ -1,0 +1,9 @@
+{
+  "city": "Soschi",
+  "temperature": 17,
+  "condition": "Cloudless",
+  "humidity": 60,
+  "wind_speed": 2,
+  "wind_direction": "SW",
+  "timestamp": "2025-11-29T14:15:00"
+}

@@ -1,0 +1,9 @@
+{
+  "city": "Moscow",
+  "temperature": 1,
+  "condition": "Cloudy",
+  "humidity": 82,
+  "wind_speed": 1,
+  "wind_direction": "W",
+  "timestamp": "2025-11-29T14:00:00"
+}

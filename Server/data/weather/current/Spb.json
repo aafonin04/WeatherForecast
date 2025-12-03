@@ -1,0 +1,9 @@
+{
+  "city": "Saint Petersburg",
+  "temperature": 2,
+  "condition": "Cloudy",
+  "humidity": 89,
+  "wind_speed": 3,
+  "wind_direction": "S",
+  "timestamp": "2025-11-29T14:05:00"
+}
