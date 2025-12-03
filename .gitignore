@@ -1,21 +1,34 @@
-# Android Studio / IntelliJ
-.idea/
-*.iml
-*.iws
+# Python / Server
+venv/
+pycache/
+*.pyc
+*.pyo
+*.pyd
+*.env
 
-# Gradle
+# Logs
+logs/
+*.log
+
+# IDE / OS
+.idea/
+*.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Android / Gradle
+
+*.iml
 .gradle/
 build/
-gradle-app.setting
-gradlew
-gradlew.bat
 local.properties
-
-# MacOS
-.DS_Store
-
-# Другие
-*.class
-*.log
-*.pyc
-*.swp
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+captures/
+.externalNativeBuild
+.cxx
