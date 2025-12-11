@@ -1,0 +1,47 @@
+{
+  "city": "Saint Petersburg",
+  "forecast": [
+    {
+      "datetime": "2024-02-15",
+      "temperature_min": -3,
+      "temperature_max": 1,
+      "condition": "Snow"
+    },
+    {
+      "datetime": "2024-02-16",
+      "temperature_min": -5,
+      "temperature_max": 0,
+      "condition": "Overcast"
+    },
+    {
+      "datetime": "2024-02-17",
+      "temperature_min": -2,
+      "temperature_max": 2,
+      "condition": "Freezing rain"
+    },
+    {
+      "datetime": "2024-02-18",
+      "temperature_min": -4,
+      "temperature_max": 1,
+      "condition": "Snow"
+    },
+    {
+      "datetime": "2024-02-19",
+      "temperature_min": -6,
+      "temperature_max": -2,
+      "condition": "Sunny"
+    },
+    {
+      "datetime": "2024-02-20",
+      "temperature_min": -3,
+      "temperature_max": 1,
+      "condition": "Cloudy"
+    },
+    {
+      "datetime": "2024-02-21",
+      "temperature_min": -1,
+      "temperature_max": 3,
+      "condition": "Rain"
+    }
+  ]
+}

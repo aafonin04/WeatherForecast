@@ -1,0 +1,47 @@
+{
+  "city": "Moscow",
+  "forecast": [
+    {
+      "datetime": "2025-11-30",
+      "temperature_min": -2,
+      "temperature_max": 3,
+      "condition": "Snow"
+    },
+    {
+      "datetime": "2025-12-01",
+      "temperature_min": -5,
+      "temperature_max": 1,
+      "condition": "Cloudy"
+    },
+    {
+      "datetime": "2025-12-02",
+      "temperature_min": -4,
+      "temperature_max": 0,
+      "condition": "Snow"
+    },
+    {
+      "datetime": "2025-12-03",
+      "temperature_min": -12,
+      "temperature_max": -5,
+      "condition": "Snow"
+    },
+    {
+      "datetime": "2025-12-04",
+      "temperature_min": -8,
+      "temperature_max": -2,
+      "condition": "Cloudy"
+    },
+    {
+      "datetime": "2025-12-05",
+      "temperature_min": -2,
+      "temperature_max": 0,
+      "condition": "Sunny"
+    },
+    {
+      "datetime": "2025-12-06",
+      "temperature_min": -7,
+      "temperature_max": -3,
+      "condition": "Snow"
+    }
+  ]
+}
