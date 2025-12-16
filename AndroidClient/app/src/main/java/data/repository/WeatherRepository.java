@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.LiveData;
 
 import java.util.concurrent.TimeUnit;
+import android.util.Log;
 
 import data.api.WeatherApi;
 import data.model.CurrentWeather;
@@ -53,6 +54,7 @@ public class WeatherRepository {
         weatherApi.getCurrentWeather(lat, lon).enqueue(new Callback<ApiResponse<CurrentWeather>>() {
             @Override
             public void onResponse(Call<ApiResponse<CurrentWeather>> call, Response<ApiResponse<CurrentWeather>> response) {
+                Log.d("WeatherApp", "Запрос current: " + call.request().url());  // Лог URL
                 if (response.isSuccessful() && response.body() != null) {
                     ApiResponse<CurrentWeather> apiResp = response.body();
                     if (apiResp.isSuccess()) {
@@ -67,8 +69,12 @@ public class WeatherRepository {
 
             @Override
             public void onFailure(Call<ApiResponse<CurrentWeather>> call, Throwable t) {
+                Log.e("WeatherApp", "Сетевая ошибка: " + t.getMessage());
                 errorMessage.setValue("Сетевая ошибка: " + t.getMessage());
             }
+
+
+
         });
         return currentWeatherData;
     }
@@ -77,6 +83,7 @@ public class WeatherRepository {
         weatherApi.getForecast(lat, lon).enqueue(new Callback<ApiResponse<ForecastData>>() {
             @Override
             public void onResponse(Call<ApiResponse<ForecastData>> call, Response<ApiResponse<ForecastData>> response) {
+                Log.d("WeatherApp", "Запрос forecast: " + call.request().url());  // Лог URL
                 if (response.isSuccessful() && response.body() != null) {
                     ApiResponse<ForecastData> apiResp = response.body();
                     if (apiResp.isSuccess()) {
@@ -91,6 +98,7 @@ public class WeatherRepository {
 
             @Override
             public void onFailure(Call<ApiResponse<ForecastData>> call, Throwable t) {
+                Log.e("WeatherApp", "Сетевая ошибка: " + t.getMessage());
                 errorMessage.setValue("Сетевая ошибка: " + t.getMessage());
             }
         });
