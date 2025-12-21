@@ -3,6 +3,8 @@ package data.repository;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.LiveData;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import android.util.Log;
 
@@ -27,6 +29,8 @@ public class WeatherRepository {
     private MutableLiveData<ForecastData> forecastData = new MutableLiveData<>();
     private MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
+    private Map<String, CurrentWeather> currentCache = new HashMap<>();
+    private Map<String, ForecastData> forecastCache = new HashMap<>();
     public WeatherRepository() {
         // Логирование запросов (для debug)
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
