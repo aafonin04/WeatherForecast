@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import data.model.CurrentWeather;
 import data.model.ForecastData;
+import ui.fragment.CurrentWeatherFragment;
 import ui.viewmodel.WeatherViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.fragment_container), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -32,41 +33,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WeatherViewModel viewModel = new ViewModelProvider(this).get(WeatherViewModel.class);
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new CurrentWeatherFragment())
+                .commit();
+
         double lat = 43.5853;
         double lon = 39.7231;
         viewModel.loadCurrentWeather(lat, lon);
         viewModel.loadForecast(lat, lon);
-
-        viewModel.getCurrentData().observe(this, current -> {
-            if (current != null) {
-                Log.d("WeatherApp", "Получены current данные: city=" + current.getCity() + ", temp=" + current.getTemperature());
-                Toast.makeText(this, "Current: " + current.getTemperature() + "°C, " + current.getCondition(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        // Наблюдай за данными current
-        viewModel.getCurrentData().observe(this, (CurrentWeather current) -> {
-            if (current != null) {
-                Log.d("WeatherApp", "Получены current данные: city=" + current.getCity() + ", temp=" + current.getTemperature());
-                Toast.makeText(this, "Current: " + current.getTemperature() + "°C, " + current.getCondition(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-    // Наблюдай за данными forecast
-        viewModel.getForecastData().observe(this, (ForecastData forecast) -> {
-            if (forecast != null && forecast.getForecast() != null) {
-                Log.d("WeatherApp", "Получен forecast: дней=" + forecast.getForecast().size());
-                String firstDay = forecast.getForecast().get(0).getDatetime() + ": " + forecast.getForecast().get(0).getCondition();
-                Toast.makeText(this, "Forecast: " + firstDay, Toast.LENGTH_LONG).show();
-            }
-        });
-
-    // Наблюдай за ошибками (здесь тип String, обычно инференс работает, но для consistency)
-        viewModel.getError().observe(this, (String error) -> {
-            if (error != null) {
-                Log.e("WeatherApp", "Ошибка: " + error);
-                Toast.makeText(this, "Ошибка: " + error, Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }

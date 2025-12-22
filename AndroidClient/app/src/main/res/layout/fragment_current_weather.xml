@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ошибка загрузки"
+        android:visibility="gone"
+        android:textColor="#FF0000" />
+
+    <TextView
+        android:id="@+id/text_condition_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:visibility="gone" />  <!-- Для эмодзи-иконки -->
+
+    <TextView
+        android:id="@+id/text_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Температура: -"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Условия: -"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Влажность: -"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ветер: -"
+        android:visibility="gone" />
+
+</LinearLayout>
