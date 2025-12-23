@@ -19,8 +19,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.weatherforecast.data.location.LocationProvider;
-import com.example.weatherforecast.ui.viewmodel.LocationViewModel;
-import com.example.weatherforecast.ui.viewmodel.WeatherViewModel;
+import data.location.LocationViewModel;
+import ui.viewmodel.WeatherViewModel;
 
 import data.model.CurrentWeather;
 import data.model.ForecastData;

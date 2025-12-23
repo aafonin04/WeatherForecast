@@ -1,4 +1,4 @@
-package com.example.weatherforecast.ui.viewmodel;
+package data.location;
 
 import android.app.Application;
 import android.location.Location;
